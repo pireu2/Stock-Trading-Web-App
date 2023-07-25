@@ -69,7 +69,7 @@ def buy():
             return apology("stock not found", 400)
 
         try:
-            share_value = int(share)
+            share_value = float(share)
             if share_value < 0:
                 raise ValueError
         except ValueError:
@@ -190,7 +190,7 @@ def quote():
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         try:
-            shares = int(shares)
+            shares = float(shares)
             if shares < 0:
                 raise TypeError
         except (ValueError, TypeError):
@@ -263,7 +263,7 @@ def sell():
             return apology("stock not found", 400)
 
         try:
-            share_value = int(share)
+            share_value = float(share)
             if share_value < 0:
                 raise ValueError
         except ValueError:
